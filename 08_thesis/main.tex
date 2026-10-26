@@ -1,0 +1,146 @@
+% Do not change document class, margins, fonts, etc.
+\documentclass[a4paper,oneside,bibliography=totoc]{scrbook}
+
+% some useful packages (add more as needed)
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{algorithm} % you can modify the algorithm style to your liking
+\counterwithin{algorithm}{chapter} % so that algorithms have chapter numbers as well
+\usepackage{algorithmic}
+\usepackage{csquotes}
+\renewcommand{\algorithmiccomment}[1]{\hfill\textit{// #1}}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[colorlinks,citecolor=Green]{hyperref} % you may change/remove the colors
+\usepackage{lipsum} % you do not need this
+
+% chicago citation style
+\usepackage{natbib}
+\bibliographystyle{chicagoa}
+\setcitestyle{authoryear,round,semicolon,aysep={},yysep={,}} \let\cite\citep
+
+% example enviroments (add more as needed)
+\newtheorem{definition}{Definition} \newtheorem{proposition}{Proposition}
+
+\begin{document}
+
+\frontmatter \subject{Master Thesis} % change to appropriate type
+\title{Title of Your Master Thesis}
+\author{Max Muster\\
+  (matriculation number 12345678)} \date{July 1, 2024}
+\publishers{{\small Submitted to}\\
+  Data and Web Science Group\\
+  Prof.\ Dr.\ Right-Name-Here\\
+  University of Mannheim\\}
+\maketitle
+
+\chapter{Abstract}
+
+Your thesis must contain an abstract. A good reference for thesis writing
+is~\citet{zobel2014}; we highly recommend that you study this or a similar book
+during your studies. He writes the following about the abstract:
+
+\blockcquote{zobel2004}{%
+  An abstract is typically a single paragraph of about 50 to 200 words. The
+  function of an abstract is to allow readers to judge whether or not the paper
+  is of relevance to them. It should therefore be a concise summary of the
+  paper's aims, scope, and conclusions. There is no space for unnecessary text;
+  an abstract should be kept to as few words as possible while remaining clear
+  and informative. Irrelevancies, such as minor details or a description of the
+  structure of the paper, are inappropriate, as are acronyms, abbreviations, and
+  mathematics. Sentences such as "We review relevant literature" should be
+  omitted.
+
+  The more specific an abstract is, the more interesting it is likely to be.
+  Instead of writing "space requirements can be significantly reduced", write
+  "space requirements can be reduced by 60\%". Instead of writing "we have a new
+  inversion algorithm", write "we have a new inversion algorithm, based on
+  move­to-front lists".
+
+  Many scientists browse research papers outside their area of expertise. You
+  should not assume that all likely readers will be specialists in the topic of
+  their paper-abstracts should be self-contained and written for as broad a
+  readership as possible. Only in rare circumstances should an abstract cite
+  another paper (for example, when one paper consists entirely of analysis of
+  results in another), in which case the reference should be given in full, not
+  as a citation to the bibliography.}
+
+% table of contents
+\begingroup%
+\hypersetup{hidelinks}% disable link color in TOC only
+\tableofcontents%
+\endgroup
+
+% none of the things below is needed, but you may add them if you feel that they
+% are helpful for your work \listofalgorithms \listoffigures \listoftables
+% \listtheorems{definition} \listtheorems{proposition}
+
+
+% okay, start new numbering ... here is where it really starts
+\mainmatter
+
+\input{01_introduction}
+\input{02_literature_review}
+\input{03_methodology}
+\input{04_results}
+\input{05_discussion}
+\input{06_conclusions}
+
+\bibliography{references}
+
+
+\appendix
+\chapter{Additional Experimental Results}
+
+\citet{zobel2004} writes:
+
+\blockcquote{zobel2004}{%
+  Some papers have appendices giving detail of proofs or experimental results,
+  and, where appropriate, material such as listings of computer programs. The
+  purpose of an appendix is to hold bulky material that would otherwise
+  interfere with the narrative flow of the paper, or material that even
+  interested readers do not need to refer to. Appendices are rarely necessary.}
+
+In the context of a BSc or MSc thesis, the last sentence often does not hold.
+
+\chapter{Proof Details}
+
+\backmatter
+\chapter{Ehrenwörtliche Erklärung}
+
+Ich versichere, dass ich die beiliegende Bachelor-, Master-, Seminar-, oder
+Projektarbeit ohne Hilfe Dritter und ohne Benutzung anderer als der angegebenen
+Quellen und in der untenstehenden Tabelle angegebenen Hilfsmittel angefertigt
+und die den benutzten Quellen wörtlich oder inhaltlich entnommenen Stellen als
+solche kenntlich gemacht habe. Diese Arbeit hat in gleicher oder ähnlicher Form
+noch keiner Prüfungsbehörde vorgelegen. Ich bin mir bewusst, dass eine falsche
+Erklärung rechtliche Folgen haben wird.
+
+% Declare below which AI tools you used in the process of writing your work,
+% including text, image, code, and data generation. If you used a tool for a
+% purpose not included in the list yet, add it to the list.
+\begin{center}
+  \textbf{Declaration of Used AI Tools} \\[.3em]
+  \begin{tabularx}{\textwidth}{lXlc}
+    \toprule
+    Tool & Purpose & Where? & Useful? \\
+    \midrule
+    ChatGPT & Rephrasing & Throughout & + \\
+    DeepL & Translation & Throughout & + \\
+    ResearchGPT & Summarization of related work & Sec.~\ref{sec:related_work_A} & - \\
+    Dall-E & Image generation & Figs.~2, 3 & ++ \\
+    GPT-4 & Code generation & functions.py & + \\
+    ChatGPT & Related work hallucination & Most of bibliography & ++ \\
+    \bottomrule
+  \end{tabularx}
+\end{center}
+
+\vspace{2cm}
+\noindent Unterschrift\\
+\noindent Mannheim, den XX.~XXXX 2024 \hfill
+
+\end{document}

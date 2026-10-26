@@ -1,1 +1,9 @@
 .env 
+*.aux
+*.bbl
+*.blg
+*.fls
+*.log
+*.fdb_latexmk
+*.synctex.gz
+*.toc
