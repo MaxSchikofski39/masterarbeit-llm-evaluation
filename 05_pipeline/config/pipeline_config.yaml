@@ -1,36 +1,25 @@
-# pipeline_config.yaml
 versions:
   prompt_version: "1.0"
   criterion_catalog_version: "1.0"
   applicability_matrix_version: "1.0"
 
 vignettes:
-  included_ids: ["V01", "V02", "V03", "V04", "V05", "V06", "V07", "V08", "V09"]
+  included_ids: ["V01", "V02", "V03", "V04"]
 
 models:
   model_1:
-    provider: "anbieter_name_1"
-    model_id: "exakte_modell_version_1"
+    provider: "academic_cloud"
+    model_id: "dein-modell-name-in-der-cloud" # z.B. gpt-4o oder llama3
     access_mode: "api"
     parameters:
       temperature: 0.0
       seed: 42
-      max_tokens: 2048
-  model_2:
-    provider: "anbieter_name_2"
-    model_id: "exakte_modell_version_2"
-    access_mode: "api"
-    parameters:
-      temperature: 0.0
-      seed: 42
-      max_tokens: 2048
+      max_tokens: 1500
 
 prompts:
-  system_prompt: |
-    [Hier eingefrorenen System-Prompt einfügen]
-  user_prompt_template: |
-    [Identisches Format für alle Modelle einfügen]
+  system_prompt: ""
+  user_prompt_template: "{vignette_text}"
 
 execution:
-  runs_per_model: 3
-  retry_rule: "Max 3 Retries bei API-Fehler 50x, kein Retry bei Inhaltsfilter"
+  runs_per_model: 1
+  retry_rule: "Max 3 Retries"
