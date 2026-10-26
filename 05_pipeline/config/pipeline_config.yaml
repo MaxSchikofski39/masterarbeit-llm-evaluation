@@ -9,7 +9,7 @@ vignettes:
 models:
   model_1:
     provider: "academic_cloud"
-    model_id: "dein-modell-name-in-der-cloud" # z.B. gpt-4o oder llama3
+    model_id: "gpt-4o" # z.B. gpt-4o oder llama3
     access_mode: "api"
     parameters:
       temperature: 0.0

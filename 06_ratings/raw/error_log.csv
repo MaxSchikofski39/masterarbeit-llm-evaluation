@@ -1,0 +1,2 @@
+response_id,vignette_id,model_requested,run_id,reason_code,error_message,timestamp_utc
+RESP_B330BF03,V01,dein-modell-name-in-der-cloud,1,API_ERROR,"Error code: 404 - {'error': {'message': 'The model `dein-modell-name-in-der-cloud` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",2026-10-26T14:20:25.061363+00:00
